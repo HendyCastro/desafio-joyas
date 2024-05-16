@@ -1,12 +1,4 @@
-const { Pool } = require('pg');
-
-const pool = new Pool({
-    user: 'naya',
-    host: 'localhost',
-    database: 'joyas',
-    password: 'naya1234',
-    allowExitOnIdle: true
-});
+const { pool } = require("./database.js")
 
 const getData = async (limit, page, order_by) => {
 

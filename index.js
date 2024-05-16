@@ -1,15 +1,13 @@
 const express = require('express');
 const { getData, getDetalle, ejecutarConsulta } = require("./consultas.js");
-
-
+const { registrarRuta } = require("./middleware.js")
 
 const app = express();
+app.use(registrarRuta) // nuestro middleware
 
 app.listen(3000, () => {
     console.log('Servidor corriendo en el puerto 3000');
 });
-
-
 
 app.get("/joyas", async (req, res) => {
 
